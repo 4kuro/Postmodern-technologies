@@ -2,7 +2,7 @@
 
 def Fibonacci(n):
     if n < 0:
-        print("Incorrect input")
+        raise ValueError("Incorrect input")
 
     elif n == 0:
         return 0
