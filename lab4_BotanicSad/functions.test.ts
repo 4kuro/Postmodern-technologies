@@ -31,5 +31,5 @@ test('modifyArray should not modify array value type', () => {
   const { arr1 } = referenceTypes2();
   const originalValue = arr1[0];
   modifyArray(arr1, 0, 10);
-  expect(arr1[0]).toBe(originalValue); // Значение не должно измениться, так как массив должен быть скопирован, а не передан по ссылке
+  expect(arr1[0]).toBe(originalValue); // Значення не повинно змінитися
 });
