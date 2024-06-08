@@ -1,0 +1,10 @@
+FROM python:3.12
+
+WORKDIR /project
+
+ADD dumb_code .
+ADD test_dumb_code .
+
+RUN pip install psutil
+
+CMD ["python", "-m", "unittest", "test_dumb_code"]
