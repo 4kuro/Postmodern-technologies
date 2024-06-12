@@ -27,3 +27,9 @@ export function valueTypes() {
   export function modifyArray(arr: any[], index: number, newValue: number) {
     arr[index] = newValue;
   }
+
+  export function addAndPop(arr: any[]): any {
+    arr.push(1); // Додаємо значення 1 в кінець списку
+    const poppedValue = arr.pop(); // Вилучаємо останній елемент і зберігаємо його значення
+    return { newArr: arr, poppedValue };
+}
