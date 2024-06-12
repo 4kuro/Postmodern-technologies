@@ -1,4 +1,4 @@
-import { valueTypes, referenceTypes, referenceTypes2, modifyObject, modifyArray } from './functions';
+import { valueTypes, referenceTypes, referenceTypes2, modifyObject, modifyArray, addAndPop } from './functions';
 var gc = require("js-gc")
 
 
@@ -50,4 +50,18 @@ test('heap object check', () => {
     const originalValue = arr1[0];
     modifyArray(arr1, 0, 10);
     expect(arr1[0]).toBe(originalValue); // Значення не повинно змінитися
+  });
+
+
+  test('should demonstrate stack behavior', () => {
+    const stack: any[] = [1, 2, 3];
+    const beforeSize = stack.length;
+
+    const result = addAndPop(stack); // Tест показує що список працює на стеку
+
+    const afterSize = result.newArr.length;
+    const poppedValue = result.poppedValue;
+
+    expect(afterSize).toBe(beforeSize);
+    expect(poppedValue).toBe(1);
   });
