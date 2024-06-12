@@ -65,3 +65,10 @@ test('heap object check', () => {
     expect(afterSize).toBe(beforeSize);
     expect(poppedValue).toBe(1);
   });
+
+  test('stack object check', () => {
+    const before = process.memoryUsage().heapUsed;
+    let n = 5;
+    const result = process.memoryUsage().heapUsed - before;
+    expect(result).toBe(0);
+  })
